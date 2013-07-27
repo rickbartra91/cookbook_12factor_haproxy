@@ -1,7 +1,7 @@
 global
   log <%= node['haproxy']['logging']['host'] %>:<%= node['haproxy']['logging']['port'] %> local0
   log <%= node['haproxy']['logging']['host'] %>:<%= node['haproxy']['logging']['port'] %>  local1 notice
-  #log loghost    local0 info
+  log-send-hostname
   maxconn <%= node['haproxy']['global_max_connections'] %>
   #debug
   #quiet
