@@ -4,7 +4,7 @@ include_recipe "haproxy::install_#{node['haproxy']['install_method']}"
 #node.override['discover']['haproxy_backend']['ipaddresses']['127.0.0.1']['hostname'] = 'localhost'
 
 list = node.discover.haproxy_backend.ipaddresses.map do |addr, opts|
-  next if opts['disable']
+  next if opts['enable'] == false
 
   { :ipaddress => addr, :hostname => opts['hostname'] }
 end
