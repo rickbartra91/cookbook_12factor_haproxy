@@ -1,7 +1,7 @@
 include_recipe "haproxy::install_#{node['haproxy']['install_method']}"
 
-# TODO this needs to be removed, it's just for the initial testing/dev
-node.override['discover']['haproxy_backend']['ipaddresses']['127.0.0.1']['hostname'] = 'localhost'
+# TODO use this in a vagrantfile for testing
+#node.override['discover']['haproxy_backend']['ipaddresses']['127.0.0.1']['hostname'] = 'localhost'
 
 list = node.discover.haproxy_backend.ipaddresses.map do |addr, opts|
   next if opts['disable']
