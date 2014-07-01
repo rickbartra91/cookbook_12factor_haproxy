@@ -1,0 +1,13 @@
+DEPENDENCIES
+  12factor_haproxy
+    path: .
+    metadata: true
+
+GRAPH
+  12factor_haproxy (0.0.1)
+    haproxy (>= 0.0.0)
+  build-essential (2.0.4)
+  cpu (0.2.0)
+  haproxy (1.6.4)
+    build-essential (>= 0.0.0)
+    cpu (>= 0.2.0)
